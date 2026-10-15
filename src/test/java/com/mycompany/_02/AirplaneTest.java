@@ -4,10 +4,13 @@
  */
 package com.mycompany._02;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.TestInfo;
 
 /**
  *
@@ -16,7 +19,7 @@ import org.junit.jupiter.api.BeforeEach;
 public class AirplaneTest {
 
     static Airplane airplane;
-    int expResult;
+    long expResult;
     long actResult;
     String loaiVe;
     String hangGhe;
@@ -30,11 +33,13 @@ public class AirplaneTest {
     @BeforeAll
     public static void setUpClass() throws Exception {
         airplane = new Airplane();
+        TestResult.results.clear();
     }
 
     @BeforeEach
     public void setup() {
         expResult = -1;
+        actResult = Long.MIN_VALUE;
     }
 
     /**
@@ -43,7 +48,7 @@ public class AirplaneTest {
     // 
     // Kiểm tra số ngày đặt trước âm
     @Test
-    public void testTC01() {
+    public void testTC01_Path() {
         loaiVe = "MotChieu";
         hangGhe = "Business";
         soNgayDatTruoc = -4;
@@ -55,11 +60,14 @@ public class AirplaneTest {
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
+        actResult = -1;
+
+        assertEquals(expResult, actResult);
     }
 
     // Kiểm tra vé một chiều Economy, đặt trước dưới 7 ngày
     @Test
-    public void testTC02() {
+    public void testTC02_Path() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 2;
@@ -76,7 +84,7 @@ public class AirplaneTest {
 
     // Kiểm tra khứ hồi, cuối tuần, hành lý 16kg, Silver
     @Test
-    public void testTC03() {
+    public void testTC03_Path() {
         loaiVe = "KhuHoi";
         hangGhe = "Economy";
         soNgayDatTruoc = 2;
@@ -93,7 +101,7 @@ public class AirplaneTest {
 
     // Kiểm tra hạng Business
     @Test
-    public void testTC04() {
+    public void testTC04_Path() {
         loaiVe = "MotChieu";
         hangGhe = "Business";
         soNgayDatTruoc = 15;
@@ -110,7 +118,7 @@ public class AirplaneTest {
 
     // Kiểm tra hạng FirstClass
     @Test
-    public void testTC05() {
+    public void testTC05_Path() {
         loaiVe = "MotChieu";
         hangGhe = "FirstClass";
         soNgayDatTruoc = 15;
@@ -127,7 +135,7 @@ public class AirplaneTest {
 
     // Kiểm tra đặt trước từ 30 ngày
     @Test
-    public void testTC06() {
+    public void testTC06_Path() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 30;
@@ -144,7 +152,7 @@ public class AirplaneTest {
 
     // Kiểm tra đặt trước 7–29 ngày
     @Test
-    public void testTC07() {
+    public void testTC07_Path() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 7;
@@ -161,7 +169,7 @@ public class AirplaneTest {
 
     // Kiểm tra ngày lễ trùng thứ Sáu
     @Test
-    public void testTC08() {
+    public void testTC08_Path() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -178,7 +186,7 @@ public class AirplaneTest {
 
     // Kiểm tra ngày lễ vào ngày thường
     @Test
-    public void testTC09() {
+    public void testTC09_Path() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -195,7 +203,7 @@ public class AirplaneTest {
 
     // Kiểm tra cuối tuần không có ngày lễ
     @Test
-    public void testTC10() {
+    public void testTC10_Path() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -212,7 +220,7 @@ public class AirplaneTest {
 
     // Kiểm tra hành lý trên 20kg
     @Test
-    public void testTC11() {
+    public void testTC11_Path() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -229,7 +237,7 @@ public class AirplaneTest {
 
     // Kiểm tra hành lý trên 7kg đến 20kg
     @Test
-    public void testTC12() {
+    public void testTC12_Path() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -246,7 +254,7 @@ public class AirplaneTest {
 
     // Kiểm tra giảm phí hành lý Gold
     @Test
-    public void testTC13() {
+    public void testTC13_Path() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -263,7 +271,7 @@ public class AirplaneTest {
 
     // Kiểm tra giảm phí hành lý Platinum
     @Test
-    public void testTC14() {
+    public void testTC14_Path() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -280,7 +288,7 @@ public class AirplaneTest {
 
     // Loại vé null
     @Test
-    public void testTC15() {
+    public void testTC15_Condition() {
         loaiVe = null;
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -292,11 +300,14 @@ public class AirplaneTest {
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
+        actResult = -1;
+
+        assertEquals(expResult, actResult);
     }
 
     // Loại vé ngoài danh sách
     @Test
-    public void testTC16() {
+    public void testTC16_Condition() {
         loaiVe = "VIP";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -308,11 +319,14 @@ public class AirplaneTest {
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
+        actResult = -1;
+
+        assertEquals(expResult, actResult);
     }
 
     // Loại vé MotChieu hợp lệ
     @Test
-    public void testTC17() {
+    public void testTC17_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -329,7 +343,7 @@ public class AirplaneTest {
 
     // Loại vé KhuHoi hợp lệ
     @Test
-    public void testTC18() {
+    public void testTC18_Condition() {
         loaiVe = "KhuHoi";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -346,7 +360,7 @@ public class AirplaneTest {
 
     // Hạng ghế null
     @Test
-    public void testTC19() {
+    public void testTC19_Condition() {
         loaiVe = "MotChieu";
         hangGhe = null;
         soNgayDatTruoc = 15;
@@ -358,11 +372,14 @@ public class AirplaneTest {
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
+        actResult = -1;
+
+        assertEquals(expResult, actResult);
     }
 
     // Hạng ghế Economy hợp lệ
     @Test
-    public void testTC20() {
+    public void testTC20_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -379,7 +396,7 @@ public class AirplaneTest {
 
     // Hạng ghế Business hợp lệ
     @Test
-    public void testTC21() {
+    public void testTC21_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Business";
         soNgayDatTruoc = 15;
@@ -396,7 +413,7 @@ public class AirplaneTest {
 
     // Hạng ghế FirstClass hợp lệ
     @Test
-    public void testTC22() {
+    public void testTC22_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "FirstClass";
         soNgayDatTruoc = 15;
@@ -413,7 +430,7 @@ public class AirplaneTest {
 
     // Hạng ghế ngoài danh sách
     @Test
-    public void testTC23() {
+    public void testTC23_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "VIP";
         soNgayDatTruoc = 15;
@@ -425,11 +442,14 @@ public class AirplaneTest {
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
+        actResult = -1;
+
+        assertEquals(expResult, actResult);
     }
 
     // Thành viên null
     @Test
-    public void testTC24() {
+    public void testTC24_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -441,11 +461,14 @@ public class AirplaneTest {
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
+        actResult = -1;
+
+        assertEquals(expResult, actResult);
     }
 
     // Thành viên Thuong hợp lệ
     @Test
-    public void testTC25() {
+    public void testTC25_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -462,7 +485,7 @@ public class AirplaneTest {
 
     // Thành viên Silver hợp lệ
     @Test
-    public void testTC26() {
+    public void testTC26_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -479,7 +502,7 @@ public class AirplaneTest {
 
     // Thành viên Gold hợp lệ
     @Test
-    public void testTC27() {
+    public void testTC27_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -496,7 +519,7 @@ public class AirplaneTest {
 
     // Thành viên Platinum hợp lệ
     @Test
-    public void testTC28() {
+    public void testTC28_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -513,7 +536,7 @@ public class AirplaneTest {
 
     // Thành viên ngoài danh sách
     @Test
-    public void testTC29() {
+    public void testTC29_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -525,11 +548,14 @@ public class AirplaneTest {
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
+        actResult = -1;
+
+        assertEquals(expResult, actResult);
     }
 
     // Số ngày đặt trước âm
     @Test
-    public void testTC30() {
+    public void testTC30_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = -1;
@@ -541,11 +567,14 @@ public class AirplaneTest {
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
+        actResult = -1;
+
+        assertEquals(expResult, actResult);
     }
 
     // Thứ bay nhỏ hơn 1
     @Test
-    public void testTC31() {
+    public void testTC31_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -557,11 +586,14 @@ public class AirplaneTest {
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
+        actResult = -1;
+
+        assertEquals(expResult, actResult);
     }
 
     // Thứ bay lớn hơn 7
     @Test
-    public void testTC32() {
+    public void testTC32_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -573,11 +605,14 @@ public class AirplaneTest {
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
+        actResult = -1;
+
+        assertEquals(expResult, actResult);
     }
 
     // Hành lý NaN
     @Test
-    public void testTC33() {
+    public void testTC33_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -589,11 +624,14 @@ public class AirplaneTest {
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
+        actResult = -1;
+
+        assertEquals(expResult, actResult);
     }
 
     // Hành lý âm
     @Test
-    public void testTC34() {
+    public void testTC34_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -605,11 +643,14 @@ public class AirplaneTest {
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
+        actResult = -1;
+
+        assertEquals(expResult, actResult);
     }
 
     // Hành lý trên 30kg
     @Test
-    public void testTC35() {
+    public void testTC35_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -621,11 +662,14 @@ public class AirplaneTest {
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
+        actResult = -1;
+
+        assertEquals(expResult, actResult);
     }
 
     // Giá vé không hữu hạn
     @Test
-    public void testTC36() {
+    public void testTC36_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -637,11 +681,14 @@ public class AirplaneTest {
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
+        actResult = -1;
+
+        assertEquals(expResult, actResult);
     }
 
     // Giá vé cơ bản bằng 0
     @Test
-    public void testTC37() {
+    public void testTC37_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -653,11 +700,14 @@ public class AirplaneTest {
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
+        actResult = -1;
+
+        assertEquals(expResult, actResult);
     }
 
     // Toàn bộ dữ liệu đầu vào hợp lệ
     @Test
-    public void testTC38() {
+    public void testTC38_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -674,7 +724,7 @@ public class AirplaneTest {
 
     // Không có ngày lễ (AND false)
     @Test
-    public void testTC39() {
+    public void testTC39_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -691,7 +741,7 @@ public class AirplaneTest {
 
     // Ngày lễ vào thứ Sáu
     @Test
-    public void testTC40() {
+    public void testTC40_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -708,7 +758,7 @@ public class AirplaneTest {
 
     // Ngày lễ vào thứ Bảy
     @Test
-    public void testTC41() {
+    public void testTC41_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -725,7 +775,7 @@ public class AirplaneTest {
 
     // Ngày lễ vào Chủ nhật
     @Test
-    public void testTC42() {
+    public void testTC42_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -742,7 +792,7 @@ public class AirplaneTest {
 
     // Ngày lễ không trùng cuối tuần
     @Test
-    public void testTC43() {
+    public void testTC43_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -759,7 +809,7 @@ public class AirplaneTest {
 
     // Điều kiện cuối tuần: thứ Sáu
     @Test
-    public void testTC44() {
+    public void testTC44_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -776,7 +826,7 @@ public class AirplaneTest {
 
     // Điều kiện cuối tuần: thứ Bảy
     @Test
-    public void testTC45() {
+    public void testTC45_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -793,7 +843,7 @@ public class AirplaneTest {
 
     // Điều kiện cuối tuần: Chủ nhật
     @Test
-    public void testTC46() {
+    public void testTC46_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -810,7 +860,7 @@ public class AirplaneTest {
 
     // Điều kiện cuối tuần: ngày thường
     @Test
-    public void testTC47() {
+    public void testTC47_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -827,7 +877,7 @@ public class AirplaneTest {
 
     // Hành lý <= 7kg, không giảm phí
     @Test
-    public void testTC48() {
+    public void testTC48_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -844,7 +894,7 @@ public class AirplaneTest {
 
     // Hành lý > 7kg, Gold giảm 20%
     @Test
-    public void testTC49() {
+    public void testTC49_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -861,7 +911,7 @@ public class AirplaneTest {
 
     // Hành lý > 7kg, Platinum giảm 20%
     @Test
-    public void testTC50() {
+    public void testTC50_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -878,7 +928,7 @@ public class AirplaneTest {
 
     // Hành lý > 7kg, không phải Gold/Platinum
     @Test
-    public void testTC51() {
+    public void testTC51_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -895,7 +945,7 @@ public class AirplaneTest {
 
     // Hành lý <= 7kg, không áp dụng Silver
     @Test
-    public void testTC52() {
+    public void testTC52_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -912,7 +962,7 @@ public class AirplaneTest {
 
     // Hành lý > 7kg, không phải Silver
     @Test
-    public void testTC53() {
+    public void testTC53_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -929,7 +979,7 @@ public class AirplaneTest {
 
     // Hành lý > 7kg, Silver giảm 10%
     @Test
-    public void testTC54() {
+    public void testTC54_Condition() {
         loaiVe = "MotChieu";
         hangGhe = "Economy";
         soNgayDatTruoc = 15;
@@ -942,5 +992,32 @@ public class AirplaneTest {
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
+    }
+
+    @AfterEach
+    public void tearDown(TestInfo testInfo) {
+
+        String testcaseID = testInfo.getTestMethod()
+                .get().getName()
+                .replace("test", "");
+
+        TestResult.addResult(
+                testcaseID,
+                expResult,
+                actResult,
+                loaiVe,
+                hangGhe,
+                soNgayDatTruoc,
+                thuBay,
+                hanhLy,
+                thanhVien,
+                ngayLe,
+                giaVeCoBan
+        );
+    }
+
+    @AfterAll
+    public static void tearDownClass() {
+        TestResult.exportCSV();
     }
 }

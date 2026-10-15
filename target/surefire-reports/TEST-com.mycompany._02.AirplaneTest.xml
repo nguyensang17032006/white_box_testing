@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.mycompany._02.AirplaneTest" time="0.149" tests="54" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.mycompany._02.AirplaneTest" time="0.2" tests="54" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -16,7 +16,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21.0.11\bin"/>
-    <property name="sun.java.command" value="C:\Users\Sang\AppData\Local\Temp\surefire1505003435735055507\surefirebooter-20261015145425257_3.jar C:\Users\Sang\AppData\Local\Temp\surefire1505003435735055507 2026-10-15T14-54-25_051-jvmRun1 surefire-20261015145425257_1tmp surefire_0-20261015145425257_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\Sang\AppData\Local\Temp\surefire15749833654619062219\surefirebooter-20261015164031408_3.jar C:\Users\Sang\AppData\Local\Temp\surefire15749833654619062219 2026-10-15T16-40-31_229-jvmRun1 surefire-20261015164031408_1tmp surefire_0-20261015164031408_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="com.mycompany._02.AirplaneTest"/>
     <property name="surefire.test.class.path" value="D:\DuLieuCua_Sang\HK261\Testing\Project\09_02\target\test-classes;D:\DuLieuCua_Sang\HK261\Testing\Project\09_02\target\classes;C:\Users\Sang\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.3\junit-jupiter-api-5.10.3.jar;C:\Users\Sang\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\Sang\.m2\repository\org\junit\platform\junit-platform-commons\1.10.3\junit-platform-commons-1.10.3.jar;C:\Users\Sang\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\Sang\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.3\junit-jupiter-params-5.10.3.jar;C:\Users\Sang\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.3\junit-jupiter-engine-5.10.3.jar;C:\Users\Sang\.m2\repository\org\junit\platform\junit-platform-engine\1.10.3\junit-platform-engine-1.10.3.jar;"/>
@@ -32,7 +32,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\Sang\AppData\Local\Temp\surefire1505003435735055507\surefirebooter-20261015145425257_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\Sang\AppData\Local\Temp\surefire15749833654619062219\surefirebooter-20261015164031408_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.11+9-LTS-211"/>
@@ -62,103 +62,58 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testTC01" classname="com.mycompany._02.AirplaneTest" time="0.024">
-    <system-out><![CDATA[Du lieu khong hop le!
-]]></system-out>
-  </testcase>
-  <testcase name="testTC02" classname="com.mycompany._02.AirplaneTest" time="0.009"/>
-  <testcase name="testTC03" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC04" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC05" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC06" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC07" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC08" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC09" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC10" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC11" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC12" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC13" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC14" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC15" classname="com.mycompany._02.AirplaneTest" time="0.001">
-    <system-out><![CDATA[Du lieu khong hop le!
-]]></system-out>
-  </testcase>
-  <testcase name="testTC16" classname="com.mycompany._02.AirplaneTest" time="0.001">
-    <system-out><![CDATA[Du lieu khong hop le!
-]]></system-out>
-  </testcase>
-  <testcase name="testTC17" classname="com.mycompany._02.AirplaneTest" time="0.002"/>
-  <testcase name="testTC18" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC19" classname="com.mycompany._02.AirplaneTest" time="0.0">
-    <system-out><![CDATA[Du lieu khong hop le!
-]]></system-out>
-  </testcase>
-  <testcase name="testTC20" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC21" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC22" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC23" classname="com.mycompany._02.AirplaneTest" time="0.001">
-    <system-out><![CDATA[Du lieu khong hop le!
-]]></system-out>
-  </testcase>
-  <testcase name="testTC24" classname="com.mycompany._02.AirplaneTest" time="0.002">
-    <system-out><![CDATA[Du lieu khong hop le!
-]]></system-out>
-  </testcase>
-  <testcase name="testTC25" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC26" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC27" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC28" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC29" classname="com.mycompany._02.AirplaneTest" time="0.001">
-    <system-out><![CDATA[Du lieu khong hop le!
-]]></system-out>
-  </testcase>
-  <testcase name="testTC30" classname="com.mycompany._02.AirplaneTest" time="0.001">
-    <system-out><![CDATA[Du lieu khong hop le!
-]]></system-out>
-  </testcase>
-  <testcase name="testTC31" classname="com.mycompany._02.AirplaneTest" time="0.001">
-    <system-out><![CDATA[Du lieu khong hop le!
-]]></system-out>
-  </testcase>
-  <testcase name="testTC32" classname="com.mycompany._02.AirplaneTest" time="0.0">
-    <system-out><![CDATA[Du lieu khong hop le!
-]]></system-out>
-  </testcase>
-  <testcase name="testTC33" classname="com.mycompany._02.AirplaneTest" time="0.001">
-    <system-out><![CDATA[Du lieu khong hop le!
-]]></system-out>
-  </testcase>
-  <testcase name="testTC34" classname="com.mycompany._02.AirplaneTest" time="0.001">
-    <system-out><![CDATA[Du lieu khong hop le!
-]]></system-out>
-  </testcase>
-  <testcase name="testTC35" classname="com.mycompany._02.AirplaneTest" time="0.001">
-    <system-out><![CDATA[Du lieu khong hop le!
-]]></system-out>
-  </testcase>
-  <testcase name="testTC36" classname="com.mycompany._02.AirplaneTest" time="0.0">
-    <system-out><![CDATA[Du lieu khong hop le!
-]]></system-out>
-  </testcase>
-  <testcase name="testTC37" classname="com.mycompany._02.AirplaneTest" time="0.001">
-    <system-out><![CDATA[Du lieu khong hop le!
-]]></system-out>
-  </testcase>
-  <testcase name="testTC38" classname="com.mycompany._02.AirplaneTest" time="0.002"/>
-  <testcase name="testTC39" classname="com.mycompany._02.AirplaneTest" time="0.002"/>
-  <testcase name="testTC40" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC41" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC42" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC43" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC44" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC45" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC46" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC47" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC48" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC49" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC50" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC51" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC52" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC53" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC54" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC48_Condition" classname="com.mycompany._02.AirplaneTest" time="0.037"/>
+  <testcase name="testTC23_Condition" classname="com.mycompany._02.AirplaneTest" time="0.002"/>
+  <testcase name="testTC33_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC43_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC53_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC15_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC25_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC35_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC45_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
+  <testcase name="testTC01_Path" classname="com.mycompany._02.AirplaneTest" time="0.002"/>
+  <testcase name="testTC02_Path" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC03_Path" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC04_Path" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC20_Condition" classname="com.mycompany._02.AirplaneTest" time="0.002"/>
+  <testcase name="testTC05_Path" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC06_Path" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC07_Path" classname="com.mycompany._02.AirplaneTest" time="0.002"/>
+  <testcase name="testTC08_Path" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC09_Path" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC30_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC17_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
+  <testcase name="testTC40_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC27_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC50_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC37_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC47_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC22_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC10_Path" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
+  <testcase name="testTC11_Path" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC12_Path" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC32_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
+  <testcase name="testTC13_Path" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC14_Path" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC19_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC42_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC29_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC52_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC39_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC49_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
+  <testcase name="testTC24_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC34_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC44_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC54_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC16_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC26_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
+  <testcase name="testTC36_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
+  <testcase name="testTC46_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC21_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
+  <testcase name="testTC31_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC18_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC41_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC28_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC51_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
+  <testcase name="testTC38_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
 </testsuite>

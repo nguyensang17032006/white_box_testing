@@ -22,7 +22,6 @@ public class Airplane {
                 || hanhLy < 0 || hanhLy > 30 
                 || !Double.isFinite(giaVeCoBan)
                 || giaVeCoBan <= 0) {
-            System.out.println("Du lieu khong hop le!");
             return -1;
         }
 
