@@ -11,6 +11,11 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.TestInfo;
+import java.io.IOException;
+import java.util.stream.Stream;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
 
 /**
  *
@@ -19,6 +24,7 @@ import org.junit.jupiter.api.TestInfo;
 public class AirplaneTest {
 
     static Airplane airplane;
+    String currentTestcaseID;
     long expResult;
     long actResult;
     String loaiVe;
@@ -38,6 +44,7 @@ public class AirplaneTest {
 
     @BeforeEach
     public void setup() {
+        currentTestcaseID = null;
         expResult = -1;
         actResult = Long.MIN_VALUE;
     }
@@ -46,57 +53,81 @@ public class AirplaneTest {
      * Test of tinhGiaVe method, of class Airplane.
      */
     // 
-    // Kiểm tra số ngày đặt trước âm
-    @Test
-    public void testTC01_Path() {
-        loaiVe = "MotChieu";
-        hangGhe = "Business";
-        soNgayDatTruoc = -4;
-        thuBay = 4;
-        hanhLy = 5;
-        thanhVien = "Silver";
-        ngayLe = true;
-        giaVeCoBan = 1_200_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
+    // Hàm dùng chung để đọc dữ liệu từ file CSV
+    private static Stream<Arguments> csvData(String path)
+            throws IOException {
 
-        assertEquals(expResult, actResult);
-        actResult = -1;
-
-        assertEquals(expResult, actResult);
+        return TestResult.importCSV(path)
+                .stream()
+                .map(row -> Arguments.of((Object[]) row));
     }
 
-    // Kiểm tra vé một chiều Economy, đặt trước dưới 7 ngày
-    @Test
-    public void testTC02_Path() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 2;
-        thuBay = 2;
-        hanhLy = 5;
-        thanhVien = "Thuong";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_200_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
+// Dữ liệu kiểm thử cho TC01
+    public static Stream<Arguments> dataTC01() throws IOException {
+        return csvData("AirplaneTestCases/Data_TC01.csv");
     }
 
-    // Kiểm tra khứ hồi, cuối tuần, hành lý 16kg, Silver
-    @Test
-    public void testTC03_Path() {
-        loaiVe = "KhuHoi";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 2;
-        thuBay = 6;
-        hanhLy = 16;
-        thanhVien = "Silver";
-        ngayLe = false;
-        giaVeCoBan = 1_100_000;
-        expResult = 2_748_600;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
+// Dữ liệu kiểm thử cho TC02
+    public static Stream<Arguments> dataTC02() throws IOException {
+        return csvData("AirplaneTestCases/Data_TC02.csv");
+    }
 
-        assertEquals(expResult, actResult);
+// Dữ liệu kiểm thử cho TC03
+    public static Stream<Arguments> dataTC03() throws IOException {
+        return csvData("AirplaneTestCases/Data_TC03.csv");
+    }
+
+    // Chuyển dữ liệu và gọi hàm cần kiểm thử
+    private void runCSVTest(String testcaseID, String loaiVe, String hangGhe,
+            String soNgay, String thu, String kg, String thanhVien,
+            String le, String giaGoc, String expected) {
+        currentTestcaseID = testcaseID;
+        this.loaiVe = loaiVe.equalsIgnoreCase("null") ? null : loaiVe;
+        this.hangGhe = hangGhe.equalsIgnoreCase("null") ? null : hangGhe;
+        this.soNgayDatTruoc = Integer.parseInt(soNgay);
+        this.thuBay = Integer.parseInt(thu);
+        this.hanhLy = Double.parseDouble(kg);
+        this.thanhVien = thanhVien.equalsIgnoreCase("null") ? null : thanhVien;
+        this.ngayLe = Boolean.parseBoolean(le);
+        this.giaVeCoBan = Double.parseDouble(giaGoc);
+        this.expResult = Long.parseLong(expected);
+        this.actResult = Airplane.tinhGiaVe(this.loaiVe, this.hangGhe,
+                this.soNgayDatTruoc, this.thuBay, this.hanhLy,
+                this.thanhVien, this.ngayLe, this.giaVeCoBan);
+        assertEquals(expResult, actResult, testcaseID);
+    }
+
+    // TC01_Path - Kiểm tra số ngày đặt trước âm
+    @ParameterizedTest(name = "{0} - {1}")
+    @MethodSource("dataTC01")
+    public void testTC01_Path(String testcaseID, String description,
+            String loaiVe, String hangGhe, String soNgayDatTruoc,
+            String thuBay, String hanhLy, String thanhVien,
+            String ngayLe, String giaVeCoBan, String expected) {
+        runCSVTest(testcaseID, loaiVe, hangGhe, soNgayDatTruoc,
+                thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan, expected);
+    }
+
+    // TC02_Path - Kiểm tra vé một chiều Economy đặt trước dưới 7 ngày
+    @ParameterizedTest(name = "{0} - {1}")
+    @MethodSource("dataTC02")
+    public void testTC02_Path(String testcaseID, String description,
+            String loaiVe, String hangGhe, String soNgayDatTruoc,
+            String thuBay, String hanhLy, String thanhVien,
+            String ngayLe, String giaVeCoBan, String expected) {
+        runCSVTest(testcaseID, loaiVe, hangGhe, soNgayDatTruoc,
+                thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan, expected);
+    }
+
+    // TC03_Path - Kiểm tra khứ hồi cuối tuần hành lý Silver
+    @ParameterizedTest(name = "{0} - {1}")
+    @MethodSource("dataTC03")
+    public void testTC03_Path(String testcaseID, String description,
+            String loaiVe, String hangGhe, String soNgayDatTruoc,
+            String thuBay, String hanhLy, String thanhVien,
+            String ngayLe, String giaVeCoBan, String expected) {
+        runCSVTest(testcaseID, loaiVe, hangGhe, soNgayDatTruoc,
+                thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan, expected);
     }
 
     // Kiểm tra hạng Business
@@ -997,9 +1028,9 @@ public class AirplaneTest {
     @AfterEach
     public void tearDown(TestInfo testInfo) {
 
-        String testcaseID = testInfo.getTestMethod()
-                .get().getName()
-                .replace("test", "");
+        String testcaseID = currentTestcaseID != null
+                ? currentTestcaseID
+                : testInfo.getTestMethod().get().getName().replace("test", "");
 
         TestResult.addResult(
                 testcaseID,
