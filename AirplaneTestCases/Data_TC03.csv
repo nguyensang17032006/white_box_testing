@@ -1,6 +1,0 @@
-﻿TestcaseID,Description,loaiVe,hangGhe,soNgayDatTruoc,thuBay,hanhLy,thanhVien,ngayLe,giaVeCoBan,Expected
-TC03_Path_01,Kiểm tra khứ hồi cuối tuần và hành lý Silver - dữ liệu 1,KhuHoi,Economy,2,6,16,Silver,False,1100000,2748600
-TC03_Path_02,Kiểm tra khứ hồi cuối tuần và hành lý Silver - dữ liệu 2,KhuHoi,Economy,1,7,8,Silver,False,1000000,2511000
-TC03_Path_03,Kiểm tra khứ hồi cuối tuần và hành lý Silver - dữ liệu 3,KhuHoi,Economy,4,5,21,Silver,False,900000,2408400
-TC03_Path_04,Kiểm tra khứ hồi cuối tuần và hành lý Silver - dữ liệu 4,KhuHoi,Economy,0,6,16,Silver,True,1200000,3634200
-TC03_Path_05,Kiểm tra khứ hồi cuối tuần và hành lý Silver - dữ liệu 5,KhuHoi,Economy,6,7,12,Silver,False,800000,2135800

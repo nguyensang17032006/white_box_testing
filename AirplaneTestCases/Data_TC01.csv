@@ -1,6 +1,0 @@
-﻿TestcaseID,Description,loaiVe,hangGhe,soNgayDatTruoc,thuBay,hanhLy,thanhVien,ngayLe,giaVeCoBan,Expected
-TC01_Path_01,Kiểm tra số ngày đặt trước âm - dữ liệu 1,MotChieu,Business,-4,4,5,Silver,True,1200000,-1
-TC01_Path_02,Kiểm tra số ngày đặt trước âm - dữ liệu 2,MotChieu,Economy,-1,2,0,Thuong,False,1000000,-1
-TC01_Path_03,Kiểm tra số ngày đặt trước âm - dữ liệu 3,KhuHoi,Business,-10,7,16,Gold,True,900000,-1
-TC01_Path_04,Kiểm tra số ngày đặt trước âm - dữ liệu 4,MotChieu,FirstClass,-2,5,8,Platinum,False,1100000,-1
-TC01_Path_05,Kiểm tra số ngày đặt trước âm - dữ liệu 5,MotChieu,Economy,-30,3,7,Silver,False,1000000,0

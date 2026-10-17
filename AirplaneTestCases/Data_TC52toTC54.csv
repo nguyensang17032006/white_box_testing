@@ -1,0 +1,4 @@
+﻿TestcaseID,Description,loaiVe,hangGhe,soNgayDatTruoc,thuBay,hanhLy,thanhVien,ngayLe,giaVeCoBan,Expected
+TC52_Condition,"Hành lý <= 7kg, không áp dụng Silver",MotChieu,Economy,15,2,5,Silver,false,1000000,950000
+TC53_Condition,"Hành lý > 7kg, không phải Silver",MotChieu,Economy,15,2,8,Thuong,false,1000000,1100000
+TC54_Condition,"Hành lý > 7kg, Silver giảm 10%",MotChieu,Economy,15,2,8,Silver,false,1000000,1085000

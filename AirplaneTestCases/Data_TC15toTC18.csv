@@ -1,0 +1,5 @@
+﻿TestcaseID,Description,loaiVe,hangGhe,soNgayDatTruoc,thuBay,hanhLy,thanhVien,ngayLe,giaVeCoBan,Expected
+TC15_Condition,Loại vé null,null,Economy,15,2,5,Thuong,false,1000000,-1
+TC16_Condition,Loại vé ngoài danh sách,VIP,Economy,15,2,5,Thuong,false,1000000,-1
+TC17_Condition,Loại vé MotChieu hợp lệ,MotChieu,Economy,15,2,5,Thuong,false,1000000,950000
+TC18_Condition,Loại vé KhuHoi hợp lệ,KhuHoi,Economy,15,2,5,Thuong,false,1000000,1710000

@@ -1,0 +1,5 @@
+﻿TestcaseID,Description,loaiVe,hangGhe,soNgayDatTruoc,thuBay,hanhLy,thanhVien,ngayLe,giaVeCoBan,Expected
+TC44_Condition,Điều kiện cuối tuần: thứ Sáu,MotChieu,Economy,15,5,5,Thuong,false,1000000,1045000
+TC45_Condition,Điều kiện cuối tuần: thứ Bảy,MotChieu,Economy,15,6,5,Thuong,false,1000000,1045000
+TC46_Condition,Điều kiện cuối tuần: Chủ nhật,MotChieu,Economy,15,7,5,Thuong,false,1000000,1045000
+TC47_Condition,Điều kiện cuối tuần: ngày thường,MotChieu,Economy,15,2,5,Thuong,false,1000000,950000

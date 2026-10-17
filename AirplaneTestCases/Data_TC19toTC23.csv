@@ -1,0 +1,6 @@
+﻿TestcaseID,Description,loaiVe,hangGhe,soNgayDatTruoc,thuBay,hanhLy,thanhVien,ngayLe,giaVeCoBan,Expected
+TC19_Condition,Hạng ghế null,MotChieu,null,15,2,5,Thuong,false,1000000,-1
+TC20_Condition,Hạng ghế Economy hợp lệ,MotChieu,Economy,15,2,5,Thuong,false,1000000,950000
+TC21_Condition,Hạng ghế Business hợp lệ,MotChieu,Business,15,2,5,Thuong,false,1000000,1900000
+TC22_Condition,Hạng ghế FirstClass hợp lệ,MotChieu,FirstClass,15,2,5,Thuong,false,1000000,2850000
+TC23_Condition,Hạng ghế ngoài danh sách,MotChieu,VIP,15,2,5,Thuong,false,1000000,-1

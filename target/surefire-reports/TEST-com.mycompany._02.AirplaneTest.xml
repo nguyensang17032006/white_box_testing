@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.mycompany._02.AirplaneTest" time="0.21" tests="66" errors="0" skipped="0" failures="3">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" version="3.0.2" name="com.mycompany._02.AirplaneTest" time="0.252" tests="54" errors="2" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21.0.12.1\bin"/>
-    <property name="sun.java.command" value="C:\Users\LENOVO\AppData\Local\Temp\surefire1280470194762121354\surefirebooter-20261016215042893_3.jar C:\Users\LENOVO\AppData\Local\Temp\surefire1280470194762121354 2026-10-16T21-50-42_797-jvmRun1 surefire-20261016215042893_1tmp surefire_0-20261016215042893_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\LENOVO\AppData\Local\Temp\surefire182274941249209095\surefirebooter-20261017170853125_3.jar C:\Users\LENOVO\AppData\Local\Temp\surefire182274941249209095 2026-10-17T17-08-53_024-jvmRun1 surefire-20261017170853125_1tmp surefire_0-20261017170853125_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="test" value="com.mycompany._02.AirplaneTest"/>
     <property name="surefire.test.class.path" value="C:\Users\LENOVO\Documents\Khanh\HK261\Test\ck\white_box_testing\target\test-classes;C:\Users\LENOVO\Documents\Khanh\HK261\Test\ck\white_box_testing\target\classes;C:\Users\LENOVO\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.3\junit-jupiter-api-5.10.3.jar;C:\Users\LENOVO\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\LENOVO\.m2\repository\org\junit\platform\junit-platform-commons\1.10.3\junit-platform-commons-1.10.3.jar;C:\Users\LENOVO\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\LENOVO\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.3\junit-jupiter-params-5.10.3.jar;C:\Users\LENOVO\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.3\junit-jupiter-engine-5.10.3.jar;C:\Users\LENOVO\.m2\repository\org\junit\platform\junit-platform-engine\1.10.3\junit-platform-engine-1.10.3.jar;"/>
@@ -31,7 +31,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\LENOVO\AppData\Local\Temp\surefire1280470194762121354\surefirebooter-20261016215042893_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\LENOVO\AppData\Local\Temp\surefire182274941249209095\surefirebooter-20261017170853125_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.12.1+1-LTS-4"/>
@@ -60,256 +60,164 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="testTC48_Condition" classname="com.mycompany._02.AirplaneTest" time="0.015"/>
-  <testcase name="testTC23_Condition" classname="com.mycompany._02.AirplaneTest" time="0.002"/>
-  <testcase name="testTC33_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC43_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC53_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC15_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC25_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC35_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC45_Condition" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC01_Path(String, String, String, String, String, String, String, String, String, String, String)[1]" classname="com.mycompany._02.AirplaneTest" time="0.023"/>
-  <testcase name="testTC01_Path(String, String, String, String, String, String, String, String, String, String, String)[2]" classname="com.mycompany._02.AirplaneTest" time="0.002"/>
-  <testcase name="testTC01_Path(String, String, String, String, String, String, String, String, String, String, String)[3]" classname="com.mycompany._02.AirplaneTest" time="0.002"/>
-  <testcase name="testTC01_Path(String, String, String, String, String, String, String, String, String, String, String)[4]" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
-  <testcase name="testTC01_Path(String, String, String, String, String, String, String, String, String, String, String)[5]" classname="com.mycompany._02.AirplaneTest" time="0.006">
-    <failure message="TC01_Path_05 ==&gt; expected: &lt;0&gt; but was: &lt;-1&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: TC01_Path_05 ==> expected: <0> but was: <-1>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:166)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:664)
-	at com.mycompany._02.AirplaneTest.runCSVTest(AirplaneTest.java:97)
-	at com.mycompany._02.AirplaneTest.testTC01_Path(AirplaneTest.java:107)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-]]></failure>
-  </testcase>
-  <testcase name="testTC02_Path(String, String, String, String, String, String, String, String, String, String, String)[1]" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC02_Path(String, String, String, String, String, String, String, String, String, String, String)[2]" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC02_Path(String, String, String, String, String, String, String, String, String, String, String)[3]" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC02_Path(String, String, String, String, String, String, String, String, String, String, String)[4]" classname="com.mycompany._02.AirplaneTest" time="0.009"/>
-  <testcase name="testTC02_Path(String, String, String, String, String, String, String, String, String, String, String)[5]" classname="com.mycompany._02.AirplaneTest" time="0.002">
-    <failure message="TC02_Path_05 ==&gt; expected: &lt;1435000&gt; but was: &lt;1335000&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: TC02_Path_05 ==> expected: <1435000> but was: <1335000>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:166)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:664)
-	at com.mycompany._02.AirplaneTest.runCSVTest(AirplaneTest.java:97)
-	at com.mycompany._02.AirplaneTest.testTC02_Path(AirplaneTest.java:118)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-]]></failure>
-  </testcase>
-  <testcase name="testTC03_Path(String, String, String, String, String, String, String, String, String, String, String)[1]" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC03_Path(String, String, String, String, String, String, String, String, String, String, String)[2]" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC03_Path(String, String, String, String, String, String, String, String, String, String, String)[3]" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC03_Path(String, String, String, String, String, String, String, String, String, String, String)[4]" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC03_Path(String, String, String, String, String, String, String, String, String, String, String)[5]" classname="com.mycompany._02.AirplaneTest" time="0.0">
-    <failure message="TC03_Path_05 ==&gt; expected: &lt;2135800&gt; but was: &lt;2035800&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: TC03_Path_05 ==> expected: <2135800> but was: <2035800>
-	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
-	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
-	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:166)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:664)
-	at com.mycompany._02.AirplaneTest.runCSVTest(AirplaneTest.java:97)
-	at com.mycompany._02.AirplaneTest.testTC03_Path(AirplaneTest.java:129)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
-	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
-	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
-	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
-	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
-	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
-	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
-	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-]]></failure>
-  </testcase>
+  <testcase name="testTC48toTC51_Condition(String, String, String, String, String, String, String, String, String, String, String)[1]" classname="com.mycompany._02.AirplaneTest" time="0.035"/>
+  <testcase name="testTC48toTC51_Condition(String, String, String, String, String, String, String, String, String, String, String)[2]" classname="com.mycompany._02.AirplaneTest" time="0.003"/>
+  <testcase name="testTC48toTC51_Condition(String, String, String, String, String, String, String, String, String, String, String)[3]" classname="com.mycompany._02.AirplaneTest" time="0.005"/>
+  <testcase name="testTC48toTC51_Condition(String, String, String, String, String, String, String, String, String, String, String)[4]" classname="com.mycompany._02.AirplaneTest" time="0.004"/>
+  <testcase name="testTC01_Path" classname="com.mycompany._02.AirplaneTest" time="0.004"/>
+  <testcase name="testTC02_Path" classname="com.mycompany._02.AirplaneTest" time="0.003"/>
+  <testcase name="testTC03_Path" classname="com.mycompany._02.AirplaneTest" time="0.002"/>
+  <testcase name="testTC19toTC23_Condition(String, String, String, String, String, String, String, String, String, String, String)[1]" classname="com.mycompany._02.AirplaneTest" time="0.004"/>
+  <testcase name="testTC19toTC23_Condition(String, String, String, String, String, String, String, String, String, String, String)[2]" classname="com.mycompany._02.AirplaneTest" time="0.002"/>
+  <testcase name="testTC19toTC23_Condition(String, String, String, String, String, String, String, String, String, String, String)[3]" classname="com.mycompany._02.AirplaneTest" time="0.002"/>
+  <testcase name="testTC19toTC23_Condition(String, String, String, String, String, String, String, String, String, String, String)[4]" classname="com.mycompany._02.AirplaneTest" time="0.002"/>
+  <testcase name="testTC19toTC23_Condition(String, String, String, String, String, String, String, String, String, String, String)[5]" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
   <testcase name="testTC04_Path" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC20_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC05_Path" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC06_Path" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
+  <testcase name="testTC05_Path" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC06_Path" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
   <testcase name="testTC07_Path" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC08_Path" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC09_Path" classname="com.mycompany._02.AirplaneTest" time="0.002"/>
-  <testcase name="testTC30_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC17_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC40_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC27_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC50_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC37_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC47_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC22_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
+  <testcase name="testTC08_Path" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC09_Path" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC44toTC47_Condition(String, String, String, String, String, String, String, String, String, String, String)[1]" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC44toTC47_Condition(String, String, String, String, String, String, String, String, String, String, String)[2]" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC44toTC47_Condition(String, String, String, String, String, String, String, String, String, String, String)[3]" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC44toTC47_Condition(String, String, String, String, String, String, String, String, String, String, String)[4]" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
   <testcase name="testTC10_Path" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
   <testcase name="testTC11_Path" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
   <testcase name="testTC12_Path" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC32_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC13_Path" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC14_Path" classname="com.mycompany._02.AirplaneTest" time="0.007"/>
-  <testcase name="testTC19_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC42_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC29_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC52_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC39_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC49_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC24_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC34_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC44_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC54_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC16_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC26_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC36_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC46_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC21_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC31_Condition" classname="com.mycompany._02.AirplaneTest" time="0.016"/>
-  <testcase name="testTC18_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC41_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC28_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC51_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
-  <testcase name="testTC38_Condition" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
+  <testcase name="testTC13_Path" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC14_Path" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
+  <testcase name="testTC52toTC54_Condition(String, String, String, String, String, String, String, String, String, String, String)[1]" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
+  <testcase name="testTC52toTC54_Condition(String, String, String, String, String, String, String, String, String, String, String)[2]" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC52toTC54_Condition(String, String, String, String, String, String, String, String, String, String, String)[3]" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC39toTC43_Condition(String, String, String, String, String, String, String, String, String, String, String)[1]" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC39toTC43_Condition(String, String, String, String, String, String, String, String, String, String, String)[2]" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC39toTC43_Condition(String, String, String, String, String, String, String, String, String, String, String)[3]" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC39toTC43_Condition(String, String, String, String, String, String, String, String, String, String, String)[4]" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC39toTC43_Condition(String, String, String, String, String, String, String, String, String, String, String)[5]" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC15toTC18_Condition(String, String, String, String, String, String, String, String, String, String, String)[1]" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
+  <testcase name="testTC15toTC18_Condition(String, String, String, String, String, String, String, String, String, String, String)[2]" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC15toTC18_Condition(String, String, String, String, String, String, String, String, String, String, String)[3]" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC15toTC18_Condition(String, String, String, String, String, String, String, String, String, String, String)[4]" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC30toTC38_Condition(String, String, String, String, String, String, String, String, String, String, String)[1]" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC30toTC38_Condition(String, String, String, String, String, String, String, String, String, String, String)[2]" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC30toTC38_Condition(String, String, String, String, String, String, String, String, String, String, String)[3]" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC30toTC38_Condition(String, String, String, String, String, String, String, String, String, String, String)[4]" classname="com.mycompany._02.AirplaneTest" time="0.006">
+    <error message="For input string: &quot;Double.N&quot;" type="java.lang.NumberFormatException"><![CDATA[java.lang.NumberFormatException: For input string: "Double.N"
+	at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2054)
+	at java.base/jdk.internal.math.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
+	at java.base/java.lang.Double.parseDouble(Double.java:792)
+	at com.mycompany._02.AirplaneTest.runCSVTest(AirplaneTest.java:111)
+	at com.mycompany._02.AirplaneTest.testTC30toTC38_Condition(AirplaneTest.java:166)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></error>
+  </testcase>
+  <testcase name="testTC30toTC38_Condition(String, String, String, String, String, String, String, String, String, String, String)[5]" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC30toTC38_Condition(String, String, String, String, String, String, String, String, String, String, String)[6]" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
+  <testcase name="testTC30toTC38_Condition(String, String, String, String, String, String, String, String, String, String, String)[7]" classname="com.mycompany._02.AirplaneTest" time="0.001">
+    <error message="For input string: &quot;Double.POSITIVE_INFINITY&quot;" type="java.lang.NumberFormatException"><![CDATA[java.lang.NumberFormatException: For input string: "Double.POSITIVE_INFINITY"
+	at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2054)
+	at java.base/jdk.internal.math.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
+	at java.base/java.lang.Double.parseDouble(Double.java:792)
+	at com.mycompany._02.AirplaneTest.runCSVTest(AirplaneTest.java:114)
+	at com.mycompany._02.AirplaneTest.testTC30toTC38_Condition(AirplaneTest.java:166)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></error>
+  </testcase>
+  <testcase name="testTC30toTC38_Condition(String, String, String, String, String, String, String, String, String, String, String)[8]" classname="com.mycompany._02.AirplaneTest" time="0.002"/>
+  <testcase name="testTC30toTC38_Condition(String, String, String, String, String, String, String, String, String, String, String)[9]" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC24toTC29_Condition(String, String, String, String, String, String, String, String, String, String, String)[1]" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC24toTC29_Condition(String, String, String, String, String, String, String, String, String, String, String)[2]" classname="com.mycompany._02.AirplaneTest" time="0.0"/>
+  <testcase name="testTC24toTC29_Condition(String, String, String, String, String, String, String, String, String, String, String)[3]" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC24toTC29_Condition(String, String, String, String, String, String, String, String, String, String, String)[4]" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC24toTC29_Condition(String, String, String, String, String, String, String, String, String, String, String)[5]" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
+  <testcase name="testTC24toTC29_Condition(String, String, String, String, String, String, String, String, String, String, String)[6]" classname="com.mycompany._02.AirplaneTest" time="0.001"/>
 </testsuite>

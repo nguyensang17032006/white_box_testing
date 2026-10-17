@@ -1,6 +1,0 @@
-﻿TestcaseID,Description,loaiVe,hangGhe,soNgayDatTruoc,thuBay,hanhLy,thanhVien,ngayLe,giaVeCoBan,Expected
-TC02_Path_01,Kiểm tra vé một chiều Economy đặt trước dưới 7 ngày - dữ liệu 1,MotChieu,Economy,2,2,5,Thuong,False,1000000,1200000
-TC02_Path_02,Kiểm tra vé một chiều Economy đặt trước dưới 7 ngày - dữ liệu 2,MotChieu,Economy,0,3,6,Thuong,False,800000,960000
-TC02_Path_03,Kiểm tra vé một chiều Economy đặt trước dưới 7 ngày - dữ liệu 3,MotChieu,Economy,6,4,7,Gold,False,1200000,1440000
-TC02_Path_04,Kiểm tra vé một chiều Economy đặt trước dưới 7 ngày - dữ liệu 4,MotChieu,Economy,1,5,5,Thuong,False,1000000,1320000
-TC02_Path_05,Kiểm tra vé một chiều Economy đặt trước dưới 7 ngày - dữ liệu 5,MotChieu,Economy,3,2,10,Silver,False,1000000,1435000

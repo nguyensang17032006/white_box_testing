@@ -1,0 +1,10 @@
+﻿TestcaseID,Description,loaiVe,hangGhe,soNgayDatTruoc,thuBay,hanhLy,thanhVien,ngayLe,giaVeCoBan,Expected
+TC30_Condition,Số ngày đặt trước âm,MotChieu,Economy,-1,2,5,Thuong,false,1000000,-1
+TC31_Condition,Thứ bay nhỏ hơn 1,MotChieu,Economy,15,0,5,Thuong,false,1000000,-1
+TC32_Condition,Thứ bay lớn hơn 7,MotChieu,Economy,15,8,5,Thuong,false,1000000,-1
+TC33_Condition,Hành lý NaN,MotChieu,Economy,15,2,Double.N,Thuong,false,1000000,-1
+TC34_Condition,Hành lý âm,MotChieu,Economy,15,2,-1,Thuong,false,1000000,-1
+TC35_Condition,Hành lý trên 30kg,MotChieu,Economy,15,2,31,Thuong,false,1000000,-1
+TC36_Condition,Giá vé không hữu hạn,MotChieu,Economy,15,2,5,Thuong,false,Double.POSITIVE_INFINITY,-1
+TC37_Condition,Giá vé cơ bản bằng 0,MotChieu,Economy,15,2,5,Thuong,false,0,-1
+TC38_Condition,Toàn bộ dữ liệu đầu vào hợp lệ,MotChieu,Economy,15,2,5,Thuong,false,1000000,950000
