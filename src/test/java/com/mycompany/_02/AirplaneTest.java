@@ -61,42 +61,42 @@ public class AirplaneTest {
 
     // Dữ liệu của bảng quyết định số 1
     public static List<Arguments> dataTC15toTC18() throws IOException {
-        return csvData("AirplaneTestCases/Data_TC15toTC18.csv");
+        return csvData("Data_TC15toTC18.csv");
     }
 
     // Dữ liệu của bảng quyết định số 2
     public static List<Arguments> dataTC19toTC23() throws IOException {
-        return csvData("AirplaneTestCases/Data_TC19toTC23.csv");
+        return csvData("Data_TC19toTC23.csv");
     }
 
     // Dữ liệu của bảng quyết định số 3
     public static List<Arguments> dataTC24toTC29() throws IOException {
-        return csvData("AirplaneTestCases/Data_TC24toTC29.csv");
+        return csvData("Data_TC24toTC29.csv");
     }
 
     // Dữ liệu của bảng quyết định số 4
     public static List<Arguments> dataTC30toTC38() throws IOException {
-        return csvData("AirplaneTestCases/Data_TC30toTC38.csv");
+        return csvData("Data_TC30toTC38.csv");
     }
 
     // Dữ liệu của bảng quyết định số 5
     public static List<Arguments> dataTC39toTC43() throws IOException {
-        return csvData("AirplaneTestCases/Data_TC39toTC43.csv");
+        return csvData("Data_TC39toTC43.csv");
     }
 
     // Dữ liệu của bảng quyết định số 6
     public static List<Arguments> dataTC44toTC47() throws IOException {
-        return csvData("AirplaneTestCases/Data_TC44toTC47.csv");
+        return csvData("Data_TC44toTC47.csv");
     }
 
     // Dữ liệu của bảng quyết định số 7
     public static List<Arguments> dataTC48toTC51() throws IOException {
-        return csvData("AirplaneTestCases/Data_TC48toTC51.csv");
+        return csvData("Data_TC48toTC51.csv");
     }
 
     // Dữ liệu của bảng quyết định số 8
     public static List<Arguments> dataTC52toTC54() throws IOException {
-        return csvData("AirplaneTestCases/Data_TC52toTC54.csv");
+        return csvData("Data_TC52toTC54.csv");
     }
 
     // Chuyển 11 cột CSV thành tham số của hàm tính giá vé
@@ -221,7 +221,7 @@ public class AirplaneTest {
         hanhLy = 5;
         thanhVien = "Silver";
         ngayLe = true;
-        giaVeCoBan = 1_200_000;
+        giaVeCoBan = 1200000;
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
@@ -237,8 +237,8 @@ public class AirplaneTest {
         hanhLy = 5;
         thanhVien = "Thuong";
         ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_200_000;
+        giaVeCoBan = 1000000;
+        expResult = 1200000;
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
@@ -254,8 +254,8 @@ public class AirplaneTest {
         hanhLy = 16;
         thanhVien = "Silver";
         ngayLe = false;
-        giaVeCoBan = 1_100_000;
-        expResult = 2_748_600;
+        giaVeCoBan = 1100000;
+        expResult = 2748600;
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
@@ -271,8 +271,8 @@ public class AirplaneTest {
         hanhLy = 5;
         thanhVien = "Thuong";
         ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_900_000;
+        giaVeCoBan = 1000000;
+        expResult = 2900000;
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
@@ -288,8 +288,8 @@ public class AirplaneTest {
         hanhLy = 5;
         thanhVien = "Thuong";
         ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 2_850_000;
+        giaVeCoBan = 1000000;
+        expResult = 2850000;
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
@@ -305,8 +305,8 @@ public class AirplaneTest {
         hanhLy = 5;
         thanhVien = "Thuong";
         ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 850_000;
+        giaVeCoBan = 1000000;
+        expResult = 850000;
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
@@ -322,8 +322,8 @@ public class AirplaneTest {
         hanhLy = 5;
         thanhVien = "Thuong";
         ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 950_000;
+        giaVeCoBan = 1000000;
+        expResult = 950000;
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
@@ -339,8 +339,8 @@ public class AirplaneTest {
         hanhLy = 5;
         thanhVien = "Thuong";
         ngayLe = true;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_282_500;
+        giaVeCoBan = 1000000;
+        expResult = 1282500;
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
@@ -356,8 +356,8 @@ public class AirplaneTest {
         hanhLy = 5;
         thanhVien = "Thuong";
         ngayLe = true;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_187_500;
+        giaVeCoBan = 1000000;
+        expResult = 1187500;
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
@@ -373,8 +373,8 @@ public class AirplaneTest {
         hanhLy = 5;
         thanhVien = "Thuong";
         ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_045_000;
+        giaVeCoBan = 1000000;
+        expResult = 1045000;
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
@@ -390,8 +390,8 @@ public class AirplaneTest {
         hanhLy = 21;
         thanhVien = "Thuong";
         ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_250_000;
+        giaVeCoBan = 1000000;
+        expResult = 1250000;
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
@@ -407,8 +407,8 @@ public class AirplaneTest {
         hanhLy = 8;
         thanhVien = "Thuong";
         ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_100_000;
+        giaVeCoBan = 1000000;
+        expResult = 1100000;
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
@@ -424,8 +424,8 @@ public class AirplaneTest {
         hanhLy = 8;
         thanhVien = "Gold";
         ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_070_000;
+        giaVeCoBan = 1000000;
+        expResult = 1070000;
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
@@ -441,8 +441,8 @@ public class AirplaneTest {
         hanhLy = 8;
         thanhVien = "Platinum";
         ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_070_000;
+        giaVeCoBan = 1000000;
+        expResult = 1070000;
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);

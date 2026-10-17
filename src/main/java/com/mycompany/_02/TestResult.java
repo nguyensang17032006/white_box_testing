@@ -196,12 +196,8 @@ public class TestResult {
                 );
             }
 
-            System.out.println(
-                    "Đã xuất kết quả kiểm thử ra file JunitTestResults.csv"
-            );
 
         } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 }

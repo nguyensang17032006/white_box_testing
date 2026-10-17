@@ -1,7 +1,0 @@
-﻿TestcaseID,Description,loaiVe,hangGhe,soNgayDatTruoc,thuBay,hanhLy,thanhVien,ngayLe,giaVeCoBan,Expected
-TC24_Condition,Thành viên null,MotChieu,Economy,15,2,5,null,false,1000000,-1
-TC25_Condition,Thành viên Thuong hợp lệ,MotChieu,Economy,15,2,5,Thuong,false,1000000,950000
-TC26_Condition,Thành viên Silver hợp lệ,MotChieu,Economy,15,2,5,Silver,false,1000000,950000
-TC27_Condition,Thành viên Gold hợp lệ,MotChieu,Economy,15,2,5,Gold,false,1000000,950000
-TC28_Condition,Thành viên Platinum hợp lệ,MotChieu,Economy,15,2,5,Platinum,false,1000000,950000
-TC29_Condition,Thành viên ngoài danh sách,MotChieu,Economy,15,2,5,Diamond,false,1000000,-1

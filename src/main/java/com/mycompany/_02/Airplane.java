@@ -34,7 +34,7 @@ public class Airplane {
         }
 
         double gia = giaVeCoBan;
-
+        
         // 2. Loai ve: khu hoi gom 2 chieu, giam 10%
         if (loaiVe.equals("KhuHoi")) {
             gia *= 2 * 0.90;

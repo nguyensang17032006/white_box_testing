@@ -1,6 +1,6 @@
 ﻿TestcaseID,Description,loaiVe,hangGhe,soNgayDatTruoc,thuBay,hanhLy,thanhVien,ngayLe,giaVeCoBan,Expected
 TC39_Condition,Không có ngày lễ (AND false),MotChieu,Economy,15,2,5,Thuong,false,1000000,950000
-TC40_Condition,Ngày lễ vào thứ Sáu,MotChieu,Economy,15,5,5,Thuong,true,1000000,1282500
-TC41_Condition,Ngày lễ vào thứ Bảy,MotChieu,Economy,15,6,5,Thuong,true,1000000,1282500
-TC42_Condition,Ngày lễ vào Chủ nhật,MotChieu,Economy,15,7,5,Thuong,true,1000000,1282500
+TC40_Condition,Ngày lễ vào thứ Sáu,MotChieu,Economy,15,5,5,Thuong,true,1000000,1202500
+TC41_Condition,Ngày lễ vào thứ Bảy,MotChieu,Economy,15,6,5,Thuong,true,1000000,1202500
+TC42_Condition,Ngày lễ vào Chủ nhật,MotChieu,Economy,15,7,5,Thuong,true,1000000,1202500
 TC43_Condition,Ngày lễ không trùng cuối tuần,MotChieu,Economy,15,2,5,Thuong,true,1000000,1187500
