@@ -1,0 +1,5 @@
+﻿TestcaseID,Description,loaiVe,hangGhe,soNgayDatTruoc,thuBay,hanhLy,thanhVien,ngayLe,giaVeCoBan,Expected
+TC48_Condition,"Hành lý <= 7kg, không giảm phí",MotChieu,Economy,15,2,5,Gold,false,1000000,950000
+TC49_Condition,"Hành lý > 7kg, Gold giảm 20%",MotChieu,Economy,15,2,8,Gold,false,1000000,1070000
+TC50_Condition,"Hành lý > 7kg, Platinum giảm 20%",MotChieu,Economy,15,2,8,Platinum,false,1000000,1070000
+TC51_Condition,"Hành lý > 7kg, không phải Gold/Platinum",MotChieu,Economy,15,2,8,Thuong,false,1000000,1100000

@@ -4,21 +4,27 @@
  */
 package com.mycompany._02;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInfo;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
- *
  * @author Sang
  */
 public class AirplaneTest {
 
     static Airplane airplane;
+    String currentTestcaseID;
     long expResult;
     long actResult;
     String loaiVe;
@@ -31,21 +37,180 @@ public class AirplaneTest {
     double giaVeCoBan;
 
     @BeforeAll
-    public static void setUpClass() throws Exception {
+    public static void setUpClass() {
         airplane = new Airplane();
         TestResult.results.clear();
     }
 
     @BeforeEach
     public void setup() {
+        currentTestcaseID = null;
         expResult = -1;
         actResult = Long.MIN_VALUE;
     }
 
-    /**
-     * Test of tinhGiaVe method, of class Airplane.
-     */
-    // 
+    // Dùng vòng lặp for để chuyển dữ liệu CSV thành tham số JUnit
+    private static List<Arguments> csvData(String path) throws IOException {
+        List<String[]> data = TestResult.importCSV(path);
+        List<Arguments> arguments = new ArrayList<>();
+        for (String[] row : data) {
+            arguments.add(Arguments.of((Object[]) row));
+        }
+        return arguments;
+    }
+
+    // Dữ liệu của bảng quyết định số 1
+    public static List<Arguments> dataTC15toTC18() throws IOException {
+        return csvData("Data_TC15toTC18.csv");
+    }
+
+    // Dữ liệu của bảng quyết định số 2
+    public static List<Arguments> dataTC19toTC23() throws IOException {
+        return csvData("Data_TC19toTC23.csv");
+    }
+
+    // Dữ liệu của bảng quyết định số 3
+    public static List<Arguments> dataTC24toTC29() throws IOException {
+        return csvData("Data_TC24toTC29.csv");
+    }
+
+    // Dữ liệu của bảng quyết định số 4
+    public static List<Arguments> dataTC30toTC38() throws IOException {
+        return csvData("Data_TC30toTC38.csv");
+    }
+
+    // Dữ liệu của bảng quyết định số 5
+    public static List<Arguments> dataTC39toTC43() throws IOException {
+        return csvData("Data_TC39toTC43.csv");
+    }
+
+    // Dữ liệu của bảng quyết định số 6
+    public static List<Arguments> dataTC44toTC47() throws IOException {
+        return csvData("Data_TC44toTC47.csv");
+    }
+
+    // Dữ liệu của bảng quyết định số 7
+    public static List<Arguments> dataTC48toTC51() throws IOException {
+        return csvData("Data_TC48toTC51.csv");
+    }
+
+    // Dữ liệu của bảng quyết định số 8
+    public static List<Arguments> dataTC52toTC54() throws IOException {
+        return csvData("Data_TC52toTC54.csv");
+    }
+
+    // Chuyển 11 cột CSV thành tham số của hàm tính giá vé
+    private void runCSVTest(String testcaseID, String loaiVe, String hangGhe,
+            String soNgay, String thu, String kg, String thanhVien,
+            String le, String giaGoc, String expected) {
+        currentTestcaseID = testcaseID;
+        this.loaiVe = nullable(loaiVe);
+        this.hangGhe = nullable(hangGhe);
+        this.soNgayDatTruoc = Integer.parseInt(soNgay);
+        this.thuBay = Integer.parseInt(thu);
+        this.hanhLy = Double.parseDouble(kg);
+        this.thanhVien = nullable(thanhVien);
+        this.ngayLe = Boolean.parseBoolean(le);
+        this.giaVeCoBan = Double.parseDouble(giaGoc);
+        this.expResult = Long.parseLong(expected);
+        this.actResult = Airplane.tinhGiaVe(this.loaiVe, this.hangGhe,
+                this.soNgayDatTruoc, this.thuBay, this.hanhLy,
+                this.thanhVien, this.ngayLe, this.giaVeCoBan);
+        assertEquals(expResult, actResult, testcaseID);
+    }
+
+    private static String nullable(String value) {
+        return value == null || value.equalsIgnoreCase("null") ? null : value;
+    }
+
+    // Bảng quyết định số 1
+    @ParameterizedTest(name = "{0} - {1}")
+    @MethodSource("dataTC15toTC18")
+    public void testTC15toTC18_Condition(String testcaseID, String description,
+            String loaiVe, String hangGhe, String soNgayDatTruoc,
+            String thuBay, String hanhLy, String thanhVien,
+            String ngayLe, String giaVeCoBan, String expected) {
+        runCSVTest(testcaseID, loaiVe, hangGhe, soNgayDatTruoc,
+                thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan, expected);
+    }
+
+    // Bảng quyết định số 2
+    @ParameterizedTest(name = "{0} - {1}")
+    @MethodSource("dataTC19toTC23")
+    public void testTC19toTC23_Condition(String testcaseID, String description,
+            String loaiVe, String hangGhe, String soNgayDatTruoc,
+            String thuBay, String hanhLy, String thanhVien,
+            String ngayLe, String giaVeCoBan, String expected) {
+        runCSVTest(testcaseID, loaiVe, hangGhe, soNgayDatTruoc,
+                thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan, expected);
+    }
+
+    // Bảng quyết định số 3
+    @ParameterizedTest(name = "{0} - {1}")
+    @MethodSource("dataTC24toTC29")
+    public void testTC24toTC29_Condition(String testcaseID, String description,
+            String loaiVe, String hangGhe, String soNgayDatTruoc,
+            String thuBay, String hanhLy, String thanhVien,
+            String ngayLe, String giaVeCoBan, String expected) {
+        runCSVTest(testcaseID, loaiVe, hangGhe, soNgayDatTruoc,
+                thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan, expected);
+    }
+
+    // Bảng quyết định số 4
+    @ParameterizedTest(name = "{0} - {1}")
+    @MethodSource("dataTC30toTC38")
+    public void testTC30toTC38_Condition(String testcaseID, String description,
+            String loaiVe, String hangGhe, String soNgayDatTruoc,
+            String thuBay, String hanhLy, String thanhVien,
+            String ngayLe, String giaVeCoBan, String expected) {
+        runCSVTest(testcaseID, loaiVe, hangGhe, soNgayDatTruoc,
+                thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan, expected);
+    }
+
+    // Bảng quyết định số 5
+    @ParameterizedTest(name = "{0} - {1}")
+    @MethodSource("dataTC39toTC43")
+    public void testTC39toTC43_Condition(String testcaseID, String description,
+            String loaiVe, String hangGhe, String soNgayDatTruoc,
+            String thuBay, String hanhLy, String thanhVien,
+            String ngayLe, String giaVeCoBan, String expected) {
+        runCSVTest(testcaseID, loaiVe, hangGhe, soNgayDatTruoc,
+                thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan, expected);
+    }
+
+    // Bảng quyết định số 6
+    @ParameterizedTest(name = "{0} - {1}")
+    @MethodSource("dataTC44toTC47")
+    public void testTC44toTC47_Condition(String testcaseID, String description,
+            String loaiVe, String hangGhe, String soNgayDatTruoc,
+            String thuBay, String hanhLy, String thanhVien,
+            String ngayLe, String giaVeCoBan, String expected) {
+        runCSVTest(testcaseID, loaiVe, hangGhe, soNgayDatTruoc,
+                thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan, expected);
+    }
+
+    // Bảng quyết định số 7
+    @ParameterizedTest(name = "{0} - {1}")
+    @MethodSource("dataTC48toTC51")
+    public void testTC48toTC51_Condition(String testcaseID, String description,
+            String loaiVe, String hangGhe, String soNgayDatTruoc,
+            String thuBay, String hanhLy, String thanhVien,
+            String ngayLe, String giaVeCoBan, String expected) {
+        runCSVTest(testcaseID, loaiVe, hangGhe, soNgayDatTruoc,
+                thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan, expected);
+    }
+
+    // Bảng quyết định số 8
+    @ParameterizedTest(name = "{0} - {1}")
+    @MethodSource("dataTC52toTC54")
+    public void testTC52toTC54_Condition(String testcaseID, String description,
+            String loaiVe, String hangGhe, String soNgayDatTruoc,
+            String thuBay, String hanhLy, String thanhVien,
+            String ngayLe, String giaVeCoBan, String expected) {
+        runCSVTest(testcaseID, loaiVe, hangGhe, soNgayDatTruoc,
+                thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan, expected);
+    }
+
     // Kiểm tra số ngày đặt trước âm
     @Test
     public void testTC01_Path() {
@@ -56,11 +221,8 @@ public class AirplaneTest {
         hanhLy = 5;
         thanhVien = "Silver";
         ngayLe = true;
-        giaVeCoBan = 1_200_000;
+        giaVeCoBan = 1200000;
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-        actResult = -1;
 
         assertEquals(expResult, actResult);
     }
@@ -75,8 +237,8 @@ public class AirplaneTest {
         hanhLy = 5;
         thanhVien = "Thuong";
         ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_200_000;
+        giaVeCoBan = 1000000;
+        expResult = 1200000;
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
@@ -92,8 +254,8 @@ public class AirplaneTest {
         hanhLy = 16;
         thanhVien = "Silver";
         ngayLe = false;
-        giaVeCoBan = 1_100_000;
-        expResult = 2_748_600;
+        giaVeCoBan = 1100000;
+        expResult = 2748600;
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
@@ -109,8 +271,8 @@ public class AirplaneTest {
         hanhLy = 5;
         thanhVien = "Thuong";
         ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_900_000;
+        giaVeCoBan = 1000000;
+        expResult = 2900000;
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
@@ -126,8 +288,8 @@ public class AirplaneTest {
         hanhLy = 5;
         thanhVien = "Thuong";
         ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 2_850_000;
+        giaVeCoBan = 1000000;
+        expResult = 2850000;
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
@@ -143,8 +305,8 @@ public class AirplaneTest {
         hanhLy = 5;
         thanhVien = "Thuong";
         ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 850_000;
+        giaVeCoBan = 1000000;
+        expResult = 850000;
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
@@ -160,8 +322,8 @@ public class AirplaneTest {
         hanhLy = 5;
         thanhVien = "Thuong";
         ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 950_000;
+        giaVeCoBan = 1000000;
+        expResult = 950000;
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
@@ -177,8 +339,8 @@ public class AirplaneTest {
         hanhLy = 5;
         thanhVien = "Thuong";
         ngayLe = true;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_282_500;
+        giaVeCoBan = 1000000;
+        expResult = 1282500;
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
@@ -194,8 +356,8 @@ public class AirplaneTest {
         hanhLy = 5;
         thanhVien = "Thuong";
         ngayLe = true;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_187_500;
+        giaVeCoBan = 1000000;
+        expResult = 1187500;
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
@@ -211,8 +373,8 @@ public class AirplaneTest {
         hanhLy = 5;
         thanhVien = "Thuong";
         ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_045_000;
+        giaVeCoBan = 1000000;
+        expResult = 1045000;
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
@@ -228,8 +390,8 @@ public class AirplaneTest {
         hanhLy = 21;
         thanhVien = "Thuong";
         ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_250_000;
+        giaVeCoBan = 1000000;
+        expResult = 1250000;
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
@@ -245,8 +407,8 @@ public class AirplaneTest {
         hanhLy = 8;
         thanhVien = "Thuong";
         ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_100_000;
+        giaVeCoBan = 1000000;
+        expResult = 1100000;
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
@@ -262,8 +424,8 @@ public class AirplaneTest {
         hanhLy = 8;
         thanhVien = "Gold";
         ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_070_000;
+        giaVeCoBan = 1000000;
+        expResult = 1070000;
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
@@ -279,716 +441,8 @@ public class AirplaneTest {
         hanhLy = 8;
         thanhVien = "Platinum";
         ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_070_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Loại vé null
-    @Test
-    public void testTC15_Condition() {
-        loaiVe = null;
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = 5;
-        thanhVien = "Thuong";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-        actResult = -1;
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Loại vé ngoài danh sách
-    @Test
-    public void testTC16_Condition() {
-        loaiVe = "VIP";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = 5;
-        thanhVien = "Thuong";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-        actResult = -1;
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Loại vé MotChieu hợp lệ
-    @Test
-    public void testTC17_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = 5;
-        thanhVien = "Thuong";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 950_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Loại vé KhuHoi hợp lệ
-    @Test
-    public void testTC18_Condition() {
-        loaiVe = "KhuHoi";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = 5;
-        thanhVien = "Thuong";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_710_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Hạng ghế null
-    @Test
-    public void testTC19_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = null;
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = 5;
-        thanhVien = "Thuong";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-        actResult = -1;
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Hạng ghế Economy hợp lệ
-    @Test
-    public void testTC20_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = 5;
-        thanhVien = "Thuong";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 950_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Hạng ghế Business hợp lệ
-    @Test
-    public void testTC21_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Business";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = 5;
-        thanhVien = "Thuong";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_900_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Hạng ghế FirstClass hợp lệ
-    @Test
-    public void testTC22_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "FirstClass";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = 5;
-        thanhVien = "Thuong";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 2_850_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Hạng ghế ngoài danh sách
-    @Test
-    public void testTC23_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "VIP";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = 5;
-        thanhVien = "Thuong";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-        actResult = -1;
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Thành viên null
-    @Test
-    public void testTC24_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = 5;
-        thanhVien = null;
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-        actResult = -1;
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Thành viên Thuong hợp lệ
-    @Test
-    public void testTC25_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = 5;
-        thanhVien = "Thuong";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 950_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Thành viên Silver hợp lệ
-    @Test
-    public void testTC26_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = 5;
-        thanhVien = "Silver";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 950_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Thành viên Gold hợp lệ
-    @Test
-    public void testTC27_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = 5;
-        thanhVien = "Gold";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 950_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Thành viên Platinum hợp lệ
-    @Test
-    public void testTC28_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = 5;
-        thanhVien = "Platinum";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 950_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Thành viên ngoài danh sách
-    @Test
-    public void testTC29_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = 5;
-        thanhVien = "Diamond";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-        actResult = -1;
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Số ngày đặt trước âm
-    @Test
-    public void testTC30_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = -1;
-        thuBay = 2;
-        hanhLy = 5;
-        thanhVien = "Thuong";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-        actResult = -1;
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Thứ bay nhỏ hơn 1
-    @Test
-    public void testTC31_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 0;
-        hanhLy = 5;
-        thanhVien = "Thuong";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-        actResult = -1;
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Thứ bay lớn hơn 7
-    @Test
-    public void testTC32_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 8;
-        hanhLy = 5;
-        thanhVien = "Thuong";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-        actResult = -1;
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Hành lý NaN
-    @Test
-    public void testTC33_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = Double.NaN;
-        thanhVien = "Thuong";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-        actResult = -1;
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Hành lý âm
-    @Test
-    public void testTC34_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = -1;
-        thanhVien = "Thuong";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-        actResult = -1;
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Hành lý trên 30kg
-    @Test
-    public void testTC35_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = 31;
-        thanhVien = "Thuong";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-        actResult = -1;
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Giá vé không hữu hạn
-    @Test
-    public void testTC36_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = 5;
-        thanhVien = "Thuong";
-        ngayLe = false;
-        giaVeCoBan = Double.POSITIVE_INFINITY;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-        actResult = -1;
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Giá vé cơ bản bằng 0
-    @Test
-    public void testTC37_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = 5;
-        thanhVien = "Thuong";
-        ngayLe = false;
-        giaVeCoBan = 0;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-        actResult = -1;
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Toàn bộ dữ liệu đầu vào hợp lệ
-    @Test
-    public void testTC38_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = 5;
-        thanhVien = "Thuong";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 950_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Không có ngày lễ (AND false)
-    @Test
-    public void testTC39_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = 5;
-        thanhVien = "Thuong";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 950_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Ngày lễ vào thứ Sáu
-    @Test
-    public void testTC40_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 5;
-        hanhLy = 5;
-        thanhVien = "Thuong";
-        ngayLe = true;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_282_500;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Ngày lễ vào thứ Bảy
-    @Test
-    public void testTC41_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 6;
-        hanhLy = 5;
-        thanhVien = "Thuong";
-        ngayLe = true;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_282_500;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Ngày lễ vào Chủ nhật
-    @Test
-    public void testTC42_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 7;
-        hanhLy = 5;
-        thanhVien = "Thuong";
-        ngayLe = true;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_282_500;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Ngày lễ không trùng cuối tuần
-    @Test
-    public void testTC43_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = 5;
-        thanhVien = "Thuong";
-        ngayLe = true;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_187_500;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Điều kiện cuối tuần: thứ Sáu
-    @Test
-    public void testTC44_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 5;
-        hanhLy = 5;
-        thanhVien = "Thuong";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_045_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Điều kiện cuối tuần: thứ Bảy
-    @Test
-    public void testTC45_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 6;
-        hanhLy = 5;
-        thanhVien = "Thuong";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_045_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Điều kiện cuối tuần: Chủ nhật
-    @Test
-    public void testTC46_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 7;
-        hanhLy = 5;
-        thanhVien = "Thuong";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_045_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Điều kiện cuối tuần: ngày thường
-    @Test
-    public void testTC47_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = 5;
-        thanhVien = "Thuong";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 950_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Hành lý <= 7kg, không giảm phí
-    @Test
-    public void testTC48_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = 5;
-        thanhVien = "Gold";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 950_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Hành lý > 7kg, Gold giảm 20%
-    @Test
-    public void testTC49_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = 8;
-        thanhVien = "Gold";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_070_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Hành lý > 7kg, Platinum giảm 20%
-    @Test
-    public void testTC50_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = 8;
-        thanhVien = "Platinum";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_070_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Hành lý > 7kg, không phải Gold/Platinum
-    @Test
-    public void testTC51_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = 8;
-        thanhVien = "Thuong";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_100_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Hành lý <= 7kg, không áp dụng Silver
-    @Test
-    public void testTC52_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = 5;
-        thanhVien = "Silver";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 950_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Hành lý > 7kg, không phải Silver
-    @Test
-    public void testTC53_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = 8;
-        thanhVien = "Thuong";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_100_000;
-        actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
-
-        assertEquals(expResult, actResult);
-    }
-
-    // Hành lý > 7kg, Silver giảm 10%
-    @Test
-    public void testTC54_Condition() {
-        loaiVe = "MotChieu";
-        hangGhe = "Economy";
-        soNgayDatTruoc = 15;
-        thuBay = 2;
-        hanhLy = 8;
-        thanhVien = "Silver";
-        ngayLe = false;
-        giaVeCoBan = 1_000_000;
-        expResult = 1_085_000;
+        giaVeCoBan = 1000000;
+        expResult = 1070000;
         actResult = Airplane.tinhGiaVe(loaiVe, hangGhe, soNgayDatTruoc, thuBay, hanhLy, thanhVien, ngayLe, giaVeCoBan);
 
         assertEquals(expResult, actResult);
@@ -996,24 +450,12 @@ public class AirplaneTest {
 
     @AfterEach
     public void tearDown(TestInfo testInfo) {
-
-        String testcaseID = testInfo.getTestMethod()
-                .get().getName()
-                .replace("test", "");
-
-        TestResult.addResult(
-                testcaseID,
-                expResult,
-                actResult,
-                loaiVe,
-                hangGhe,
-                soNgayDatTruoc,
-                thuBay,
-                hanhLy,
-                thanhVien,
-                ngayLe,
-                giaVeCoBan
-        );
+        String testcaseID = currentTestcaseID != null
+                ? currentTestcaseID
+                : testInfo.getTestMethod().get().getName().replace("test", "");
+        TestResult.addResult(testcaseID, expResult, actResult,
+                loaiVe, hangGhe, soNgayDatTruoc, thuBay,
+                hanhLy, thanhVien, ngayLe, giaVeCoBan);
     }
 
     @AfterAll

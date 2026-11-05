@@ -1,5 +1,13 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/UnitTests/JUnit5TestClass.java to edit this template
+ */
 package com.mycompany._02;
 
+/**
+ *
+ * @author Sang
+ */
 public class Airplane {
 
     public static long tinhGiaVe(String loaiVe, String hangGhe,
@@ -19,14 +27,14 @@ public class Airplane {
                 || soNgayDatTruoc < 0
                 || thuBay < 1 || thuBay > 7
                 || !Double.isFinite(hanhLy)
-                || hanhLy < 0 || hanhLy > 30 
+                || hanhLy < 0 || hanhLy > 30
                 || !Double.isFinite(giaVeCoBan)
                 || giaVeCoBan <= 0) {
             return -1;
         }
 
         double gia = giaVeCoBan;
-
+        
         // 2. Loai ve: khu hoi gom 2 chieu, giam 10%
         if (loaiVe.equals("KhuHoi")) {
             gia *= 2 * 0.90;
@@ -34,7 +42,7 @@ public class Airplane {
 
         // 3. Hang ghe
         if (hangGhe.equals("Business")) {
-            gia *= 2;   
+            gia *= 2;
         } else if (hangGhe.equals("FirstClass")) {
             gia *= 3;
         }
